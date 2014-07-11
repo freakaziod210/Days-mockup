@@ -1,0 +1,37 @@
+
+
+
+.back-ground {
+	width: 100%;
+	height: 100%;
+	background: url(http://www.studiogascoigne.com/wp-content/uploads/We-created-a-very-minimalist-interior-consisting-of-concrete-floor-and-benches-exposed-ceiling-and-very-industrial-fixturing..jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	padding: 0;
+	margin: 0;
+}
+.navbar-default {
+	opacity: .9;
+}
+
+img {
+	margin-top:20px;
+}
+
+li img {
+	margin-right:-85px;
+}
+
+.nav li a {
+	background-color: #C8C8C8 ;
+	opacity: .9;
+	color: #282828 ;
+	font-weight: bold;
+	margin: 0.5px;
+}
+
+.pages {
+	background-color: #C8C8C8;
+	opacity: .8;
+}
