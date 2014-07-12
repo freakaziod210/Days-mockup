@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-	<html ng-app='itemApp'>
+	<html ng-app='itemApp' ng-controller='itemCtrl'>
 	<head>
 		<title></title>
 	</head>
@@ -7,14 +7,14 @@
 		<div>Add Item</div>
 
 		<div>For which store?
-			<select>
+			<select ng-model='store.name'>
 			  <option value="heber">Heber</option>
 			  <option value="provo">Provo</option>
 			</select>
 		</div>
 		<button>Submit</button>
 
-		<div ng-controller='itemCtrl'>
+		<div>
 			<form>
 				Item Title: <input type='text' ng-model='item.title'><br />
 				
@@ -25,10 +25,17 @@
 				Item Image (url): <input type='text' ng-model='item.image'><br />
 					
 
-				<button>Save</button>
+				<button ng-click='save(item)'>Save</button>
 			</form>
 		</div>
-		<script type="text/javascript" href='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js'></script>
-		<script type="text/javascript" href='itemCtrl'></script>
+			<div ng-repeat='item in store.items'>
+				{{item.title}}
+				{{item.price}}
+				{{item.description}}
+				{{item.image}}
+			</div>
+
+		<script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js'></script>
+		<script type="text/javascript" src='itemCtrl.js'></script>
 	</body>
 	</html>

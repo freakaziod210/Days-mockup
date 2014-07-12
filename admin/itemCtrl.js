@@ -1,14 +1,12 @@
  angular.module('itemApp', [])
     .controller('itemCtrl', ['$scope', function($scope) {
-      $scope.master = {};
+       $scope.store = {items:[]};
+       
+       $scope.save = function(item) {
+          $scope.newItem = angular.copy($scope.item);
+          $scope.store.items.push($scope.newItem);
+          console.log($scope.store);
+       };
 
-      $scope.update = function(item) {
-        $scope.master = angular.copy(item);
-      };
-
-      $scope.reset = function() {
-        $scope.item = angular.copy($scope.master);
-      };
-
-      $scope.reset();
+       
     }]);
