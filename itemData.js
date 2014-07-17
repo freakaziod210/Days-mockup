@@ -1,4 +1,4 @@
-var item= [
+/*var item= [
 	{
 		title:'Banana',
 		price: 2,
@@ -24,4 +24,25 @@ module.exports.getItem = function(){
 };
 module.exports.addItem = function(newItem){
    item.push(newItem);
+};*/
+
+var items= require('./item.js');
+
+exports.get = function(req, res) {
+   items.find({}, function(err, items) {
+       if (err) {
+           res.send(err);
+       }
+       res.send(items);
+   });
+};
+
+exports.post = function(req, res) {
+    var newItem = new items (req.body);
+    newItem.save(function (err, items) {
+        if(err) {
+            res.send(err);
+        }
+        res.send(items);
+    })
 };
